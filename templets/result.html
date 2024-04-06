@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Checkup Result</title>
+</head>
+<body>
+    <h1>{{ 'You are Diabetic' if result == 1 else 'You are not Diabetic' }}</h1>
+    <h2>Accuracy: {{ accuracy }}%</h2>
+    <img src="data:image/png;base64,{{ bmi }}">
+    <img src="data:image/png;base64,{{ dpf }}">
+</body>
+</html>
