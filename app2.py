@@ -220,5 +220,6 @@ st.subheader('Accuracy: ')
 st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
 
 # .\.venv\Scripts\activate
+# pip install pandas numpy pillow matplotlib scikit-learn seaborn plotly streamlit
 # pip install -r requirements.txt
-#streamlit run app.py
+#streamlit run app2.py
