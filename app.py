@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, request
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
@@ -8,11 +9,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from io import BytesIO
 import base64
-
-# To run do this
-# .\env\Scripts\activate
-# pip install flask scikit-learn pandas numpy seaborn matplotlib pillow
-# flask run
 
 app = Flask(__name__)
 
@@ -25,6 +21,13 @@ def index():
             'BMI': [request.form['bmi']],
             'DiabetesPedigreeFunction': [request.form['dpf']]
         })
+        missing_cols = ['BloodPressure', 'Glucose', 'Insulin', 'Pregnancies', 'SkinThickness']
+        for col in missing_cols:
+            if col not in user_data.columns:
+                user_data[col] = 0
+        
+        correct_order_cols = ['Pregnancies', 'Glucose', 'BloodPressure', 'SkinThickness', 'Insulin', 'BMI', 'DiabetesPedigreeFunction', 'Age']
+        user_data = user_data[correct_order_cols]
 
         # Load dataset and split into training and testing sets
         df = pd.read_csv('diabetes.csv')
