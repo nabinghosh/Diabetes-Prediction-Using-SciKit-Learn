@@ -1,9 +1,3 @@
-#pip install streamlit
-#pip install pandas
-#pip install sklearn
-
-
-# IMPORT STATEMENTS
 import streamlit as st
 import pandas as pd
 from PIL import Image
@@ -212,9 +206,7 @@ plt.yticks(np.arange(0,3,0.2))
 plt.title('0 - Healthy & 1 - Unhealthy')
 st.pyplot(fig_dpf)
 
-# .\.venv\Scripts\activate
-#streamlit run app.py
-# ager 2 too line age run korbi
+
 
 # OUTPUT
 st.subheader('Your Report: ')
@@ -226,3 +218,7 @@ else:
 st.title(output)
 st.subheader('Accuracy: ')
 st.write(str(accuracy_score(y_test, rf.predict(x_test))*100)+'%')
+
+# .\.venv\Scripts\activate
+# pip install -r requirements.txt
+#streamlit run app.py
