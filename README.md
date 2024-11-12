@@ -17,8 +17,16 @@ The project includes two distinct implementations:
 2. **Streamlit Application**: Another web-based application, this time built with the Streamlit framework. Streamlit allows for rapid prototyping and interactive data exploration, making it a great tool for this project. The Streamlit application is implemented in the `app2.py` file. Here are step by step commands you can run in your windows machine 
 ```
 python -m venv venv
-.\.venv\Scripts\activate
+```
+```
+.\venv\Scripts\activate
+```
+```
 pip install -r requirements.txt
+```
+```
 streamlit run app2.py #for streamlit app
+```
+```
 python app.py #for flask app
 ```
